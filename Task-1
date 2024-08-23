@@ -1,0 +1,45 @@
+#mkdir simple_rest_api
+#cd simple_rest_api
+#python3 -m venv venv
+#venv\Scripts\activate
+#pip install Flask
+#touch app.py
+
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+@app.route('/items', methods=['GET'])
+def get_items():
+    items = [
+        {'id': 1, 'name': 'Item 1'},
+        {'id': 2, 'name': 'Item 2'}
+    ]
+    return jsonify(items)
+
+
+@app.route('/items', methods=['POST'])
+def create_item():
+    new_item = request.json
+    return jsonify(new_item), 201
+
+
+@app.route('/items/<int:id>', methods=['PUT'])
+def update_item(id):
+    updated_item = request.json
+    return jsonify({'id': id, **updated_item})
+
+
+@app.route('/items/<int:id>', methods=['DELETE'])
+def delete_item(id):
+    return '', 204
+
+if __name__ == '__main__':
+    app.run(debug=True)
+ 
+#flask run

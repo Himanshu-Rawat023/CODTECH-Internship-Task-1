@@ -8,6 +8,10 @@ Mentor: Muzammil Ahmed
 
 
 Overview of the Project
+
+Name of teh Project is REST API.
+
+Output of the program 
 ![WhatsApp Image 2024-08-23 at 23 44 43_9a346ca4](https://github.com/user-attachments/assets/b145000b-ad73-4917-9be4-4fba1c3abc5f)
 
 Objective :
